@@ -130,6 +130,30 @@ router.get("/getAllInfo", async (req, res) => {
 
 // Get specific student data
 
+router.get("/getAllData", async (req, res) => {
+  try {
+    const allStudent = await StudentInfo.find();
+    console.log(allStudent);
+    // if (!allStudent) {
+    //   return res.status(402).json({
+    //     success: false,
+    //     message: "Sorry you data no found",
+    //   });
+    // }
+    // console.log(req.body.name);
+
+    res.status(200).json({
+      success: true,
+      allStudent,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error,
+    });
+  }
+});
+
 // Get specific food item
 router.get("/singleData/:id", async (req, res) => {
   try {
