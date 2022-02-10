@@ -24,7 +24,6 @@ const StudentInfoSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      default: "active",
     },
   },
 

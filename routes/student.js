@@ -100,7 +100,7 @@ router.delete("/student/info/delete/:id", async (req, res) => {
 
 router.get("/getAllInfo", async (req, res) => {
   try {
-    const resultPerPage = 105;
+    const resultPerPage = 5;
     const productsCount = await StudentInfo.countDocuments();
 
     const apiFeature = new ApiFeatures(StudentInfo.find(), req.query).search();
